@@ -3,7 +3,11 @@ Module to allow printing of alternative letter heads for certain trading brands,
 
 Work in progress.
 
-NEXT STEP: Create module to contain the functionality
+## trading\_as
+
+This will module will contain the basic functionality.
+
+NEXT STEP: Set up data model
 
 # Copyright and License
 
