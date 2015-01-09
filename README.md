@@ -1,5 +1,6 @@
 # odoo-trading-as
 Module to allow printing of alternative letter heads for certain trading brands, without full multicompany
+trading.
 
 Work in progress.
 
