@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <label for="type" position="before">
                     <field name="is_trading_name"/>
+                    <field name="trading_as_partner"/>
                 </label>
             </field>
         </record>

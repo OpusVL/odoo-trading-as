@@ -26,5 +26,11 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     is_trading_name = fields.Boolean()
+    trading_as_partner = fields.Many2one(
+        comodel_name='res.partner',
+        domain=[
+            ('is_trading_name', '=', True),
+        ],
+    )
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
