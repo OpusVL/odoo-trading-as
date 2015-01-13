@@ -20,31 +20,11 @@
 #
 ##############################################################################
 
+from openerp import models, fields, api
 
-{
-    'name': 'Trading As Brands',
-    'version': '0.1',
-    'author': 'OpusVL',
-    'website': 'http://opusvl.com/',
-    'summary': 'Allow company to present different branding on documents sent to different customers',
-    
-    'description': """Allow company to present different branding on documents sent to different customers,
-""",
-    'images': [
-    ],
-    'depends': [
-    ],
-    'data': [
-        'res_partner_view.xml',
-    ],
-    'demo': [
-    ],
-    'test': [
-    ],
-    'license': 'AGPL-3',
-    'installable': True,
-    'auto_install': False,
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
 
-}
+    is_trading_name = fields.Boolean()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
