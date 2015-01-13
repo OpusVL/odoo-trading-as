@@ -25,8 +25,14 @@ from openerp import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    is_trading_name = fields.Boolean()
+    is_trading_name = fields.Boolean(
+        help='Tick this if this partner represents a trading name of your company',
+    )
     trading_as_partner = fields.Many2one(
+        help=(
+            'The trading name to use for branding documents for this partner.\n' +
+            'If blank, the default company branding will be used.'
+        ),
         comodel_name='res.partner',
         domain=[
             ('is_trading_name', '=', True),
