@@ -11,5 +11,20 @@
                 </label>
             </field>
         </record>
+
+
+
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">res.partner.select.inherit_trading_as</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <filter name="supplier" position="after">
+                    <separator/>
+                    <filter string="Trading Name" name="trading_name" domain="[('is_trading_name', '=', True)]"/>
+                    <filter string="Not Trading Name" name="not_trading_name" domain="[('is_trading_name', '=', False)]"/>
+                </filter>
+            </field>
+        </record>
     </data>
 </openerp>
