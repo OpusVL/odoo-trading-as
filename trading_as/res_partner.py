@@ -28,6 +28,7 @@ class ResPartner(models.Model):
     is_trading_name = fields.Boolean(
         help='Tick this if this partner represents a trading name of your company',
     )
+
     trading_as_partner = fields.Many2one(
         help=(
             'The trading name to use for branding documents for this partner.\n' +
