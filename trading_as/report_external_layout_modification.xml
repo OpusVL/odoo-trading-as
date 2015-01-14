@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="external_layout" inherit_id="report.external_layout">
+            <!-- The first t at the root handles if o has company_id -->
+            <!-- The second t at the root handles if o doesn't have company_id -->
+            <!-- We insert a third that will overwrite company under the right conditions -->
+            <xpath expr="t[2]" position="after">
+                <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.trading_as_partner">
+                    <t t-set="company" t-value="o.partner_id.trading_as_partner"/>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</openerp>

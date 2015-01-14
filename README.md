@@ -2,13 +2,14 @@
 Module to allow printing of alternative letter heads for certain trading brands, without full multicompany
 trading.
 
-Work in progress.
+Work in progress - the data model is in a state of flux while we resolve interface compatibility
+between our trading as model and res.company.
 
 ## trading\_as
 
 This will module will contain the basic functionality.
 
-NEXT STEP: Set up data model
+NEXT STEP: Fix the data model to be sufficiently compatible with res.company to render the headers and footers.
 
 # Copyright and License
 
