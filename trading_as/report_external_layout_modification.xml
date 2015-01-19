@@ -6,8 +6,8 @@
             <!-- The second t at the root handles if o doesn't have company_id -->
             <!-- We insert a third that will overwrite company under the right conditions -->
             <xpath expr="t[2]" position="after">
-                <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.trading_as_partner">
-                    <t t-set="company" t-value="o.partner_id.trading_as_partner"/>
+                <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.trader">
+                    <t t-set="company" t-value="o.partner_id.trader"/>
                 </t>
             </xpath>
         </template>

@@ -22,15 +22,12 @@
 
 from openerp import models, fields, api
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
+class ResCompany(models.Model):
+    _inherit = 'res.company'
 
-    trader = fields.Many2one(
-        help=(
-            'The trading name to use for branding documents for this partner.\n' +
-            'If blank, the default company branding will be used.'
-        ),
+    trading_arms = fields.One2many(
         comodel_name='res.company.trader',
+        inverse_name='legal_entity',
     )
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
