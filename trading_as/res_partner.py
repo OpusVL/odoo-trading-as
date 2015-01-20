@@ -30,7 +30,7 @@ class ResPartner(models.Model):
             'The trading name to use for branding documents for this partner.\n' +
             'If blank, the default company branding will be used.'
         ),
-        comodel_name='res.company.trader',
+        comodel_name='res.company.brand',
     )
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

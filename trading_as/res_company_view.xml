@@ -11,19 +11,23 @@
                         <h2>Trading Arms:</h2>
                         <field name="trading_arms">
                             <tree>
-                                <field name="name" string="Trading Name"/>
+                                <!--<field name="name" string="Trading Name"/>-->
                             </tree>
                             <form>
                                 <sheet>
+                                    <!--
                                     <div>
                                         <field name="logo" widget="image" class="oe_avater oe_left"/>
                                     </div>
+                                    -->
+                                    <!--
                                     <div class="oe_title">
                                         <label string="Trading Name" for="name" class="oe_edit_only"/>
                                         <h1>
                                             <field name="name" class="oe_inline"/>
                                         </h1>
                                     </div>
+                                    -->
                                     <group col="4">
                                         <field name="legal_entity"/>
                                     </group>
@@ -37,14 +41,6 @@
                         </field>
                     </page>
                 </notebook>
-                <!--
-                <field name="TODO" position="after">
-                </field>
-                -->
-                <!--
-                <xpath expr="TODO" position="after">
-                </xpath>
-                -->
             </field>
         </record>
     </data>

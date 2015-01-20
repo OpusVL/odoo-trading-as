@@ -26,7 +26,7 @@ class ResCompany(models.Model):
     _inherit = 'res.company'
 
     trading_arms = fields.One2many(
-        comodel_name='res.company.trader',
+        comodel_name='res.company.brand',
         inverse_name='legal_entity',
     )
 
