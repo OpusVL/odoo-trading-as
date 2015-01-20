@@ -30,8 +30,36 @@ class ResCompanyBrand(models.Model):
         required=True,
     )
 
-    # TODO Add needed fields from res.company here
-    name = fields.Char(string='Brand Name')
+    partner_id = fields.Many2one(
+        comodel_name='res.partner',
+        required=True,
+    )
+
+    name = fields.Char(
+        related=['partner_id', 'name'],
+        string='Brand Name',
+        required=True,
+        readonly=True,
+    )
+
+    # HEADER
+    logo = fields.Binary(related=['partner_id', 'image'])
+    rml_header1 = fields.Text(string='Tagline')
+
+    # FOOTER
+    custom_footer = fields.Boolean(
+        string='Custom footer?',
+        help=(  'Check this to define the report footer manually.  ' +
+                'Otherwise it will be filled in automatically.'
+        ),
+    )
+    rml_footer = fields.Text(string='Report Footer')
+    rml_footer_readonly = fields.Text(string='Report Footer', related=['rml_footer'],)
+    phone = fields.Char(related=['partner_id', 'phone'])
+    fax = fields.Char(related=['partner_id', 'fax'])
+    email = fields.Char(related=['partner_id', 'email'])
+    website = fields.Char(related=['partner_id', 'website'])
+
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
