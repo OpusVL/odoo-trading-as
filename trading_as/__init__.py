@@ -21,7 +21,7 @@
 ##############################################################################
 
 from . import (
-    res_company_trader,
+    res_company_brand,
     res_company,
     res_partner,
 )
