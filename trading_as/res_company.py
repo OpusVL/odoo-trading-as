@@ -25,7 +25,7 @@ from openerp import models, fields, api
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    trading_arms = fields.One2many(
+    brands = fields.One2many(
         comodel_name='res.company.brand',
         inverse_name='legal_entity',
     )

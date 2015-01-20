@@ -22,7 +22,7 @@
 
 from openerp import models, fields, api
 
-class ResCompanyTrader(models.Model):
+class ResCompanyBrand(models.Model):
     _name = 'res.company.brand'
 
     legal_entity = fields.Many2one(

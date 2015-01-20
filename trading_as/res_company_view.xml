@@ -9,7 +9,7 @@
                 <notebook position="inside">
                     <page string="Trading Arms">
                         <h2>Trading Arms:</h2>
-                        <field name="trading_arms">
+                        <field name="brands">
                             <tree>
                                 <!--<field name="name" string="Trading Name"/>-->
                             </tree>
