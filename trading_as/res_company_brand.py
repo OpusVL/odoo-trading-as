@@ -31,6 +31,7 @@ class ResCompanyBrand(models.Model):
     )
 
     # TODO Add needed fields from res.company here
+    name = fields.Char(string='Brand Name')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

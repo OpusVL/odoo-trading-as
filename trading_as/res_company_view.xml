@@ -7,27 +7,25 @@
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="Trading Arms">
-                        <h2>Trading Arms:</h2>
+                    <page string="Brands">
+                        <h2>Brands:</h2>
                         <field name="brands">
-                            <tree>
-                                <!--<field name="name" string="Trading Name"/>-->
+                            <tree name="brands_tree">
+                                <field name="name"/>
                             </tree>
-                            <form>
+                            <form name="brand_form">
                                 <sheet>
                                     <!--
                                     <div>
                                         <field name="logo" widget="image" class="oe_avater oe_left"/>
                                     </div>
                                     -->
-                                    <!--
                                     <div class="oe_title">
-                                        <label string="Trading Name" for="name" class="oe_edit_only"/>
+                                        <label for="name" class="oe_edit_only"/>
                                         <h1>
                                             <field name="name" class="oe_inline"/>
                                         </h1>
                                     </div>
-                                    -->
                                     <group col="4">
                                         <field name="legal_entity"/>
                                     </group>
