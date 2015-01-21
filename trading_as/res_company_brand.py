@@ -49,16 +49,15 @@ class ResCompanyBrand(models.Model):
     # FOOTER
     custom_footer = fields.Boolean(
         string='Custom footer?',
-        help=(  'Check this to define the report footer manually.  ' +
-                'Otherwise it will be filled in automatically.'
-        ),
+        help=('This should be True.  Automatic footer generation is currently unsupported for brands.'),
+        compute='_custom_footer_always_true',
     )
+    @api.one
+    def _custom_footer_always_true(self):
+        self.custom_footer = True
+
     rml_footer = fields.Text(string='Report Footer')
-    rml_footer_readonly = fields.Text(string='Report Footer', related=['rml_footer'],)
-    phone = fields.Char(related=['partner_id', 'phone'])
-    fax = fields.Char(related=['partner_id', 'fax'])
-    email = fields.Char(related=['partner_id', 'email'])
-    website = fields.Char(related=['partner_id', 'website'])
+
 
 
 

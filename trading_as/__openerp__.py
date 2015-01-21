@@ -36,6 +36,7 @@
     ],
     'data': [
         'res_partner_view.xml',
+        'res_company_brand_view.xml',
         'res_company_view.xml',
         'report_external_layout_modification.xml',
     ],

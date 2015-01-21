@@ -6,9 +6,67 @@
             <!-- The second t at the root handles if o doesn't have company_id -->
             <!-- We insert a third that will overwrite company under the right conditions -->
             <xpath expr="t[2]" position="after">
+                <t-log expr="'XXXXXXXXXXXXXXXXXXXXXXXXX In overridden external_layout'"/>
+                <t t-set="brand" t-value="company"/>
                 <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.trader">
-                    <t t-set="company" t-value="o.partner_id.trader"/>
+                    <t t-set="brand" t-value="o.partner_id.trader"/>
                 </t>
+            </xpath>
+        </template>
+
+        <template id="external_layout_footer" inherit_id="report.external_layout_footer">
+            <xpath expr="div[@class='footer']" position="replace">
+                <div class="footer">
+                    <div class="text-center" style="border-top: 1px solid black;">
+                        <ul t-if="not brand.custom_footer" class="list-inline">
+                            <li t-if="brand.phone">Phone: <span t-field="brand.phone"/></li>
+
+                            <li t-if="brand.fax and brand.phone">&amp;bull;</li>
+                            <li t-if="brand.fax">Fax: <span t-field="brand.fax"/></li>
+
+                            <li t-if="brand.email">&amp;bull;</li>
+                            <li t-if="brand.email">Email: <span t-field="brand.email"/></li>
+
+                            <li t-if="brand.website">&amp;bull;</li>
+                            <li t-if="brand.website">Website: <span t-field="brand.website"/></li>
+                        </ul>
+
+                        <t t-if="brand.custom_footer">
+                            <span t-raw="brand.rml_footer"/>
+                        </t>
+
+                        <ul class="list-inline">
+                            <li>Page:</li>
+                            <li><span class="page"/></li>
+                            <li>/</li>
+                            <li><span class="topage"/></li>
+                        </ul>
+                    </div>
+                </div>      
+            </xpath>
+        </template>
+        <template id="external_layout_header" inherit_id="report.external_layout_header">
+            <xpath expr="div[@class='header']" position="replace">
+                <div class="header">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <img t-if="brand.logo" t-att-src="'data:image/png;base64,%s' % brand.logo" style="max-height: 45px;"/>
+                        </div>
+                        <div class="col-xs-9 text-right" style="margin-top:20px;" t-field="brand.rml_header1"/>
+                    </div>
+                    <div class="row zero_min_height">
+                        <div class="col-xs-12">
+                            <div style="border-bottom: 1px solid black;"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div t-field="brand.partner_id" 
+                                t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
+                                style="border-bottom: 1px solid black;"/>
+                        </div>
+                    </div>
+                </div>
             </xpath>
         </template>
     </data>
