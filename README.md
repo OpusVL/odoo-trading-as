@@ -7,9 +7,64 @@ between our trading as model and res.company.
 
 ## trading\_as
 
-This will module will contain the basic functionality.
+Implements alternative company branding on all reports.
 
-NEXT STEP: Fix the data model to be sufficiently compatible with res.company to render the headers and footers.
+### How to create a brand
+
+Under the company which needs the new brand option:
+
+```
+Settings -> Companies -> Your Company
+```
+
+You should see a new tab 'Brands'.
+
+Click Edit, and then Brands.
+
+Click 'Add new item' in the Brands list.
+
+Choose 'Your Company' for 'legal entity'.
+
+Under the Partners list, click Create and Edit.
+
+Fill in the name and address details of the partner and click Save.
+
+Enter the tagline and the footer to print on the reports.
+
+Click the logo to the left of the Brand Name and pick an appropriately-sized
+version of your brand's logo.
+
+Click Save.
+
+Click Save on the company object.
+
+### How to apply a brand
+
+When creating or editing a customer, there is a field 'Trader' which you can set
+to one of the brands.  If it's blank, then all reports for this customer will just take
+the company branding.  If it's set to a brand, then that brand is used.
+
+### How brand is decided
+
+The report for any object that has a 'partner\_id' will check if 'partner\_id.trader'
+is set.  If it is, then it will use that trader object for the header and footer.
+Otherwise, it will use the partner's company or the current user's company according
+to the usual Odoo logic.
+
+### Known Limitations
+
+* You currently have to select the legal entity during creation of
+  a brand - it doesn't default to the company from which it's being created.
+
+* You have to create the partner explicitly.  res.company does somehow create its
+  partner\_id delegate object automatically, but time constraints mean emulating res.company in that way
+  is out of scope at the moment.
+
+* The data links are in place for supporting multicompany (i.e. brands are attached to companies)
+  but there's no logic for validation etc that would be needed in a multicompany setting,
+  so the first time we need to use this in a multicompany setting some work will be needed to
+  make sure all that works, specifically that only brands under the user's or partner's company
+  are exposed.  Precisely what the logic should be is not yet decided.
 
 # Copyright and License
 
