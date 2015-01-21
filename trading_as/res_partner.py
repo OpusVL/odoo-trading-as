@@ -25,7 +25,8 @@ from openerp import models, fields, api
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    trader = fields.Many2one(
+    brand = fields.Many2one(
+        string='Brand',
         help=(
             'The trading name to use for branding documents for this partner.\n' +
             'If blank, the default company branding will be used.'

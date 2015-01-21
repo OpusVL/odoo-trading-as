@@ -40,14 +40,14 @@ Click Save on the company object.
 
 ### How to apply a brand
 
-When creating or editing a customer, there is a field 'Trader' which you can set
+When creating or editing a customer, there is a field 'Brand' which you can set
 to one of the brands.  If it's blank, then all reports for this customer will just take
 the company branding.  If it's set to a brand, then that brand is used.
 
 ### How brand is decided
 
-The report for any object that has a 'partner\_id' will check if 'partner\_id.trader'
-is set.  If it is, then it will use that trader object for the header and footer.
+The report for any object that has a 'partner\_id' will check if 'partner\_id.brand'
+is set.  If it is, then it will use that brand object for the header and footer.
 Otherwise, it will use the partner's company or the current user's company according
 to the usual Odoo logic.
 

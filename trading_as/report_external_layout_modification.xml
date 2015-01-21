@@ -7,8 +7,8 @@
             <!-- We insert a third that will overwrite company under the right conditions -->
             <xpath expr="t[2]" position="after">
                 <t t-set="brand" t-value="company"/>
-                <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.trader">
-                    <t t-set="brand" t-value="o.partner_id.trader"/>
+                <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.brand">
+                    <t t-set="brand" t-value="o.partner_id.brand"/>
                 </t>
             </xpath>
         </template>
