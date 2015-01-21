@@ -35,6 +35,8 @@
     'depends': [
     ],
     'data': [
+        'security/brand_groups.xml',
+        'security/ir.model.access.csv',
         'res_partner_view.xml',
         'res_company_brand_view.xml',
         'res_company_view.xml',
