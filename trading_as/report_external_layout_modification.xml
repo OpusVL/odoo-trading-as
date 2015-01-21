@@ -6,7 +6,6 @@
             <!-- The second t at the root handles if o doesn't have company_id -->
             <!-- We insert a third that will overwrite company under the right conditions -->
             <xpath expr="t[2]" position="after">
-                <t-log expr="'XXXXXXXXXXXXXXXXXXXXXXXXX In overridden external_layout'"/>
                 <t t-set="brand" t-value="company"/>
                 <t t-if="o and 'partner_id' in o and o.partner_id and o.partner_id.trader">
                     <t t-set="brand" t-value="o.partner_id.trader"/>
