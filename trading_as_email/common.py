@@ -2,7 +2,7 @@
 
 ##############################################################################
 #
-# Branded From address in accounts emails
+# Trading As Email Branding
 # Copyright (C) 2015 OpusVL (<http://opusvl.com/>)
 #
 # This program is free software: you can redistribute it and/or modify
@@ -20,11 +20,19 @@
 #
 ##############################################################################
 
-from openerp import models
-from openerp.addons.trading_as_email.common import BrandableModelMixin
+from openerp import fields
 
-class BrandInvoice(models.Model, BrandableModelMixin):
-    _inherit = 'account.invoice'
+class BrandableModelMixin(object):
+    """Mixin to add a brand field with the correct lookup semantincs
+    for branding emails.
+    """
+    brand = fields.Many2one(
+        related=['partner_id', 'brand'],
+        comodel_name='res.company.brand',
+        readonly=True,
+        required=False,
+    )
+
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
