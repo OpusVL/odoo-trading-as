@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account.email_template_edi_invoice" model="email.template">
+            <field name="email_from">${((object.brand and object.brand.email) or object.user_id.email or object.company_id.email or 'noreply@localhost' )|safe}</field>
+        </record>
+    </data>
+</openerp>

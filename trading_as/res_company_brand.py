@@ -42,6 +42,12 @@ class ResCompanyBrand(models.Model):
         readonly=True,
     )
 
+    email = fields.Char(
+        related=['partner_id', 'email'],
+        string='Brand email address',
+        readonly=True,
+    )
+
     # HEADER
     logo = fields.Binary(related=['partner_id', 'image'])
     rml_header1 = fields.Text(string='Tagline')
