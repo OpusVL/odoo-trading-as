@@ -2,7 +2,7 @@
 
 ##############################################################################
 #
-# Branded From address in accounts emails
+# Trading As Email Branding
 # Copyright (C) 2015 OpusVL (<http://opusvl.com/>)
 #
 # This program is free software: you can redistribute it and/or modify
@@ -22,22 +22,20 @@
 
 
 {
-    'name': 'Branded From address in accounts emails',
+    'name': 'Trading As Email Branding',
     'version': '0.1',
     'author': 'OpusVL',
     'website': 'http://opusvl.com/',
-    'summary': 'Brand the From address in accounts emails',
+    'summary': 'Allow company to present different branding on emails sent to different customers',
     
-    'description': """Brand the From address in accounts emails,
+    'description': """Allow company to present different branding on emails sent to different customers,
 """,
     'images': [
     ],
     'depends': [
         'trading_as',
-        'account',
     ],
     'data': [
-        'email_templates.xml',
     ],
     'demo': [
     ],
