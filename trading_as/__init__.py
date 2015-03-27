@@ -22,8 +22,8 @@
 
 from . import (
     res_company_brand,
-    res_company,
     res_partner,
+    res_company,
 )
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
